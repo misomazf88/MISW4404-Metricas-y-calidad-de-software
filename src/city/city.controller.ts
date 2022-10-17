@@ -10,7 +10,7 @@ import { CityService } from './city.service';
 export class CityController {
 
   /**
-  * Crea instancia cityService
+  * Crea instancia cityService.
   */
   constructor(private readonly cityService: CityService) { }
 
