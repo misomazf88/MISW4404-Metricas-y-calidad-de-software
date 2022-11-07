@@ -36,18 +36,6 @@ export class SupermermarketService {
   }
   
   /**
-  * Retorna un supermercado a partir del id recibido como parametro.
-  * @param supermarketId
-  * @returns SupermarketEntity
-  */
-  async findUno(supermarketId: string): Promise<SupermarketEntity> {
-    const supermarket: SupermarketEntity = await this.supermarketRepository.findOne({ where: { id: supermarketId }, relations: ["cities"] });
-    if (!supermarket)
-      throw new BusinessLogicException("The supermarket with the provided ID was not found.", BusinessError.NOT_FOUND);
-    return supermarket;
-  }
-
-  /**
   * Crea un supermercado a partir de json recibido en body con representacion de la supermercado a almacenar en db, se valida que el
   * nombre tenga mas de 10 caracteres, de lo contrario se lanza excepcion de negoico.
   * @param supermarketEntity
